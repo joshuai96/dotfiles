@@ -1,0 +1,21 @@
+# Rice needs
+yay
+hyprland
+waybar
+alacritty
+
+# Extras
+ly
+nautilus
+vscode
+gnome-keyring
+qbittorrent
+
+# Hyperland stuff
+dunst
+xdg-desktop-portal-hyprland
+pipewire
+wireplumber
+hyprpolkitagent
+hyprutils
+hyprpaper
