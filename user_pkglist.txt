@@ -10,6 +10,7 @@ nautilus
 vscode
 gnome-keyring
 qbittorrent
+nwg-look
 
 # Hyperland stuff
 dunst
