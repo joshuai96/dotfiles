@@ -22,6 +22,11 @@ ttf-firacode-nerd
 ttf-roboto
 ttf-nerd-fonts-symbols
 
+# Bluetooth
+bluez
+bluez-utils
+blueman
+
 # Hyperland stuff
 dunst
 xdg-desktop-portal-hyprland
