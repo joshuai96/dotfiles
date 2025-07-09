@@ -1,0 +1,164 @@
+[
+  {
+    "layer": "top",
+    "position": "top",
+    "height": 24,
+    "spacing": 5,
+    "modules-left": [
+      "custom/launcher",
+      "hyprland/window"
+    ],
+    "modules-center": [
+      "hyprland/workspaces"
+    ],
+    "modules-right": [
+      "idle_inhibitor",
+      "hyprland/language",
+      "temperature",
+      "cpu",
+      "memory",
+      "network",
+      "pulseaudio",
+      "bluetooth",
+      "backlight",
+      "battery",
+      "tray",
+      "clock"
+    ],
+    "custom/launcher": {
+      "format": "󱗼",
+      "on-click": "walker",
+      "tooltip": false
+    },
+    "hyprland/window": {
+      "format": "{class} - {title}",
+      "separate-outputs": true
+    },
+    "idle_inhibitor": {
+      "format": "{icon}",
+      "format-icons": {
+        "activated": "",
+        "deactivated": ""
+      }
+    },
+    "hyprland/language": {
+      "format-de": " DE"
+    },
+    "temperature": {
+      "thermal-zone": 0,
+      "critical-threshold": 75,
+      "format": "{icon} {temperatureC}°C",
+      "format-critical": " {temperatureC}°C",
+      "format-icons": [
+        "",
+        "",
+        "",
+        "",
+        ""
+      ]
+    },
+    "cpu": {
+      "format": "  {usage}%"
+    },
+    "memory": {
+      "format": " {}%"
+    },
+    "network": {
+      "format-ethernet": "󰈁 {bandwidthUpBytes} 󰕒 {bandwidthDownBytes} 󰇚",
+      "format-wifi": " {bandwidthUpBytes} 󰕒 {bandwidthDownBytes} 󰇚 {signalStrength}%",
+      "format-linked": "󱘖 {ifname} (No IP)",
+      "format-disconnected": "󰌙 Disconnected",
+      "format-disabled": " Disabled",
+      "tooltip-format-ethernet": "{ifname} via {gwaddr}",
+      "tooltip-format-wifi": "{ifname} via {gwaddr} via {essid}",
+      "on-click": "nm-connection-editor",
+      "interval": 10
+    },
+    "pulseaudio": {
+      "scroll-step": 5,
+      "format": "{icon} {volume}% {format_source}",
+      "format-bluetooth": "󰂯 {icon} {volume}% {format_source}",
+      "format-bluetooth-muted": " 󰂯 {icon} {format_source}",
+      "format-muted": "  {format_source}",
+      "format-source": " {volume}%",
+      "format-source-muted": "",
+      "format-icons": {
+        "default": [
+          "",
+          "",
+          ""
+        ]
+      },
+      "on-click": "pavucontrol"
+    },
+    "bluetooth": {
+      "format": "󰂯 {status}",
+      "format-disabled": "󰂲",
+      "format-connected": "󰂱 {num_connections} connected",
+      "on-click": "blueman-manager"
+    },
+    "backlight": {
+      "format": "{icon} {percent}%",
+      "format-icons": [
+        "",
+        "",
+        "",
+        "",
+        "",
+        "",
+        "",
+        "",
+        ""
+      ]
+    },
+    "battery": {
+      "states": {
+        "warning": 30,
+        "critical": 15
+      },
+      "format": "{icon} {capacity}%",
+      "format-charging": "󰂄 {capacity}%",
+      "format-plugged": " {capacity}%",
+      "format-icons": [
+        "",
+        "",
+        "",
+        "",
+        ""
+      ]
+    },
+    "tray": {
+      "show-passive-items": true,
+      "spacing": 10,
+      "icon-size": 24
+    },
+    "clock": {
+      "format": "{:%F %H:%M}",
+      "tooltip-format": "<tt><small>{calendar}</small></tt>",
+      "calendar": {
+        "mode": "year",
+        "mode-mon-col": 4,
+        "weeks-pos": "left"
+      }
+    }
+  },
+  {
+    "layer": "top",
+    "position": "bottom",
+    "height": 47,
+    "width": 2,
+    "modules-center": [
+      "wlr/taskbar"
+    ],
+    "wlr/taskbar": {
+      "format": "{icon}",
+      "icon-size": 42,
+      "spacing": 3,
+      "on-click-middle": "close",
+      "tooltip-format": "{title}",
+      "ignore-list": [],
+      "on-click": "activate",
+      "active-first": true
+    }
+  }
+]

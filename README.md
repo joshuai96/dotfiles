@@ -47,6 +47,10 @@ Dunst is installed by `pacman` via install using [`user_pkglist.txt`](user_pkgli
 
 Nautilus is installed by `pacman` via install using [`user_pkglist.txt`](user_pkglist.txt).
 
+## Colors
+
+The awesome [Nord Theme](https://www.nordtheme.com/)
+
 ## See also
 
 - [awesome-hyprland](https://github.com/hyprland-community/awesome-hyprland)

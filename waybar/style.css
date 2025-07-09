@@ -1,0 +1,143 @@
+
+
+* {
+  font-size: 16px;
+  font-family: 'Roboto', 'Symbols Nerd Font';
+  /* min-height: 0; */
+  padding: 0.1rem;
+}
+
+window#waybar {
+  background: rgba(59, 66, 82, 0.75);
+  color: #d8dee9;
+}
+
+window#waybar.top {
+  border-radius: 0 0 1rem 1rem;
+}
+
+window#waybar.bottom {
+  border-radius: 1rem 1rem 0 0;
+}
+
+.module {
+  padding-left: 0.3rem;
+  padding-right: 0.3rem;
+}
+
+.modules-left {
+  padding-left: 0.6rem;
+}
+
+.modules-right {
+  padding-right: 0.6rem;
+}
+
+.modules-left .module:hover, .modules-right .module:hover {
+  background: #434c5e;
+  border-radius: 0.5rem;
+}
+
+button {
+  border: none;
+  border-radius: 0;
+}
+
+tooltip {
+  background: rgba(59, 66, 82, 0.75);
+  padding: 1rem;
+}
+
+tooltip label {
+  color: #d8dee9;
+}
+
+#workspaces button {
+  padding: 0 0.6rem;
+  background: transparent;
+  color: #d8dee9;
+  border-radius: 0.5rem;
+}
+
+#workspaces button:hover {
+  background: #434c5e;
+}
+
+#workspaces button.visible {
+  background: #8fbcbb;
+}
+
+#workspaces button.active {
+  background: #88c0d0;
+}
+
+#workspaces button.urgent {
+  background: #bf616a;
+}
+
+#battery.full {
+  color: #a3be8c;
+}
+
+#battery.charging,
+#battery.plugged {
+  color: #8fbcbb;
+}
+
+@keyframes blink {
+  to {
+    color: #d8dee9;
+  }
+}
+
+#battery.warning:not(.charging) {
+  color: #d08770;
+  animation-name: blink;
+  animation-duration: 1s;
+  animation-timing-function: linear;
+  animation-iteration-count: infinite;
+  animation-direction: alternate;
+}
+
+#battery.critical:not(.charging) {
+  color: #bf616a;
+  animation-name: blink;
+  animation-duration: 0.5s;
+  animation-timing-function: linear;
+  animation-iteration-count: infinite;
+  animation-direction: alternate;
+}
+
+#network.disconnected {
+  color: #bf616a;
+}
+
+#temperature.critical {
+  color: #bf616a;
+}
+
+#idle_inhibitor.activated {
+  background: #88c0d0;
+  border-radius: 0.5rem;
+}
+
+
+#tray > .passive {
+  -gtk-icon-effect: dim;
+}
+
+#tray > .needs-attention {
+  -gtk-icon-effect: highlight;
+  background: #bf616a;
+  border-radius: 0.5rem;
+}
+
+#taskbar button {
+  border-radius: 0.5rem;
+  padding-left: 0.3rem;
+  padding-right: 0.3rem;
+}
+
+#taskbar button.active {
+  background: #88c0d0;
+}
