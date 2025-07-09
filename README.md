@@ -31,9 +31,9 @@ Eww needs to be installed afterwards with `yay`.
 
 ### Taskbar
 
-`nwg-dock-hyprland` must be build from source using `go`.
-
 Waybar is installed by `pacman` via install using [`user_pkglist.txt`](user_pkglist.txt).
+
+Design inspired by [kamlendras/waybar-macos-sequoia](https://github.com/kamlendras/waybar-macos-sequoia)
 
 ### Terminal emulator
 
