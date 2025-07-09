@@ -12,6 +12,16 @@ gnome-keyring
 qbittorrent
 nwg-look
 
+# UWSM
+util-linux
+libnewt
+uwsm
+
+# Fonts
+ttf-firacode-nerd
+ttf-roboto
+ttf-nerd-fonts-symbols
+
 # Hyperland stuff
 dunst
 xdg-desktop-portal-hyprland
