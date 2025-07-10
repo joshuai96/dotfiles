@@ -27,6 +27,11 @@ bluez
 bluez-utils
 blueman
 
+# Network
+networkmanager
+nm-connection-editor
+network-manager-applet
+
 # Hyperland stuff
 dunst
 xdg-desktop-portal-hyprland
