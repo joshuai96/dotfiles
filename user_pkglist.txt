@@ -40,3 +40,5 @@ wireplumber
 hyprpolkitagent
 hyprutils
 hyprpaper
+hyprpicker
+hyprshot
