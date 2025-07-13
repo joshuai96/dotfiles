@@ -1,0 +1,44 @@
+[general]
+live_config_reload = true
+
+[window]
+padding = { x = 10, y = 10}
+decorations = "Full"
+opacity = 0.75
+blur = true
+
+[scrolling]
+history = 100000
+
+[font]
+normal = { family = "FiraCode Nerd Font Mono", style="Regular" }
+size = 14
+builtin_box_drawing = false
+
+[colors.primary]
+foreground = "#d8dee9"
+background = "#2e3440"
+
+[colors.search]
+matches = { foreground = "#d8dee9", background = "#bf616a" }
+focused_match = { foreground = "#d8dee9", background = "#d08770" }
+
+[colors.normal]
+black = "#2e3440"
+red = "#bf616a"
+green = "#a3be8c"
+yellow = "#ebcb8b"
+blue = "#88c0d0"
+magenta = "#b48ead"
+cyan = "#8fbcbb"
+white = "#d8dee9"
+
+[selection]
+save_to_clipboard = true
+
+[cursor]
+unfocused_hollow = false
+
+[cursor.style]
+shape = "Beam"
+blinking = "Always"
