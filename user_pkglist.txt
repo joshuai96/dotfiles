@@ -13,6 +13,9 @@ git-lfs
 gnome-keyring
 qbittorrent
 nwg-look
+dunst
+pipewire
+wireplumber
 
 # UWSM
 util-linux
@@ -35,10 +38,7 @@ nm-connection-editor
 network-manager-applet
 
 # Hyperland stuff
-dunst
 xdg-desktop-portal-hyprland
-pipewire
-wireplumber
 hyprpolkitagent
 hyprutils
 hyprpaper
