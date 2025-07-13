@@ -2,13 +2,17 @@
 
 hypr_dir=${HOME}/.config/hypr
 waybar_dir=${HOME}/.config/waybar
+wallpaper_dir=${HOME}/.wallpapers
 
 clean() {
     echo "deleting hypr dir..."
     rm -rf ${hypr_dir}
-    
+
     echo "deleting waybar dir..."
     rm -rf ${waybar_dir}
+
+    echo "deleting wallpaper dir..."
+    rm -rf ${wallpaper_dir}
 }
 
 yay_packages() {
@@ -18,24 +22,30 @@ yay_packages() {
 conf_dir() {
     echo "creating hyper dir..."
     mkdir -p ${hypr_dir}
-    
+
     echo "creating waybar dir..."
     mkdir -p ${waybar_dir}
+
+    echo "creating wallpaper dir..."
+    mkdir -p ${wallpaper_dir}
 }
 
 links() {
-    echo "link hypr config..."
+    echo "link hypr configs..."
     ln -s $(pwd)/hypr/* ${hypr_dir}
 
-    echo "link waybar config..."
+    echo "link waybar configs..."
     ln -s $(pwd)/waybar/* ${waybar_dir}
+
+    echo "link wallpapers..."
+    ln -s $(pwd)/wallpaper/* ${wallpaper_dir}
 }
 
 reload() {
     echo "reload hypr..."
     hyprctl reload
-    
-    echo "reload waybar..." 
+
+    echo "reload waybar..."
     pkill waybar && hyprctl dispatch exec waybar
 }
 
