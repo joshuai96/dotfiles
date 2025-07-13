@@ -19,7 +19,7 @@
 
 ### Window manager
 
-Hyperland is installed by `pacman` via install using [`user_pkglist.txt`](user_pkglist.txt).
+Hyprland is installed by `pacman` via install using [`user_pkglist.txt`](user_pkglist.txt).
 
 ### Application launcher
 
