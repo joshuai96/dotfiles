@@ -1,5 +1,22 @@
 # Rice
 
+<span style="color: red;">**Disclaimer:**</span> This is heavy work in progress.
+
+## TODO
+
+- [ ] Hyprland
+    - [x] Monitors
+    - [x] Applications
+    - [x] Hyprpaper
+    - [ ] Styles
+- [ ] Walker
+- [ ] Eww
+- [x] Waybar
+- [x] Alacritty
+- [ ] Dunst
+- [ ] gtk themes
+- [ ] Misc
+
 ## Components
 
 | Component            | Name              | Link                                                                                     |
