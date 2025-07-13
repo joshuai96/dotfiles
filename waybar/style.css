@@ -8,7 +8,7 @@
 }
 
 window#waybar {
-  background: rgba(59, 66, 82, 0.75);
+  background: rgba(46, 52, 64, 0.75);
   color: #d8dee9;
 }
 
@@ -44,7 +44,7 @@ button {
 }
 
 tooltip {
-  background: rgba(59, 66, 82, 0.75);
+  background: rgba(46, 52, 64, 0.75);
   padding: 1rem;
 }
 
