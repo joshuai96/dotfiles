@@ -141,24 +141,5 @@
         "weeks-pos": "left"
       }
     }
-  },
-  {
-    "layer": "top",
-    "position": "bottom",
-    "height": 47,
-    "width": 2,
-    "modules-center": [
-      "wlr/taskbar"
-    ],
-    "wlr/taskbar": {
-      "format": "{icon}",
-      "icon-size": 42,
-      "spacing": 3,
-      "on-click-middle": "close",
-      "tooltip-format": "{title}",
-      "ignore-list": [],
-      "on-click": "activate",
-      "active-first": true
-    }
   }
 ]
