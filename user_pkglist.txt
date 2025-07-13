@@ -7,7 +7,9 @@ alacritty
 # Extras
 ly
 nautilus
-vscode
+code
+git
+git-lfs
 gnome-keyring
 qbittorrent
 nwg-look
