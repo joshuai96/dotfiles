@@ -23,7 +23,8 @@
       "backlight",
       "battery",
       "tray",
-      "clock"
+      "clock",
+      "custom/off"
     ],
     "custom/launcher": {
       "format": "󱗼",
@@ -140,6 +141,10 @@
         "mode-mon-col": 4,
         "weeks-pos": "left"
       }
+    },
+    "custom/off": {
+      "format": "",
+      "on-click": "shutdown -h now"
     }
   }
 ]
