@@ -44,3 +44,4 @@ hyprutils
 hyprpaper
 hyprpicker
 hyprshot
+hyprlock
