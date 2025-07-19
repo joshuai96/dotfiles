@@ -16,6 +16,7 @@ nwg-look
 dunst
 pipewire
 wireplumber
+brightnessctl
 
 # UWSM
 util-linux
@@ -45,3 +46,4 @@ hyprpaper
 hyprpicker
 hyprshot
 hyprlock
+hypridle
