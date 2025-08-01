@@ -1,14 +1,36 @@
-# Rice
+# Dotfiles
 
 <span style="color: red;">**Disclaimer:**</span> This is heavy work in progress.
 
+Dotfiles for my system bases on [EndeavourOS](https://endeavouros.com/).
+
+Most of this is portable to other systems.
+
+## Table of contents
+
+- [Dotfiles](#dotfiles)
+  - [Table of contents](#table-of-contents)
+  - [TODO](#todo)
+  - [Components](#components)
+    - [OS](#os)
+    - [Window manager](#window-manager)
+    - [Application launcher](#application-launcher)
+    - [Widgets](#widgets)
+    - [Taskbar](#taskbar)
+    - [Terminal emulator](#terminal-emulator)
+    - [Notification daemon](#notification-daemon)
+    - [Filexplorer](#filexplorer)
+  - [Colors](#colors)
+  - [See also](#see-also)
+
 ## TODO
 
-- [ ] Hyprland
-    - [x] Monitors
-    - [x] Applications
-    - [x] Hyprpaper
-    - [ ] Styles
+- [ ] Hypr
+  - [x] Monitors
+  - [x] Applications
+  - [x] Hyprpaper
+  - [x] Styles
+  - [ ] other hypr stuff
 - [ ] Walker
 - [ ] Eww
 - [x] Waybar
@@ -32,7 +54,7 @@
 
 ### OS
 
-**Note**: Use Grub!
+**Note to myself**: Use Grub!
 
 ### Window manager
 
