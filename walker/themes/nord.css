@@ -1,0 +1,33 @@
+#window,
+#box,
+#aiScroll,
+#aiList,
+#search,
+#password,
+#input,
+#prompt,
+#clear,
+#typeahead,
+#list,
+child,
+scrollbar,
+slider,
+#item,
+#text,
+#label,
+#bar,
+#sub,
+#activationlabel {
+  all: unset;
+}
+
+#window {
+  background: #2e3440;
+  color: #d8dee9;
+  padding: 10px;
+  border-radius: 15px;
+}
+
+/* #box {
+  background: red;
+} */

@@ -4,6 +4,7 @@ hypr_dir=${HOME}/.config/hypr
 waybar_dir=${HOME}/.config/waybar
 wallpapers_dir=${HOME}/.wallpapers
 alacritty_dir=${HOME}/.config/alacritty
+walker_dir=${HOME}/.config/walker
 
 clean() {
     echo "deleting hypr dir..."
@@ -17,6 +18,9 @@ clean() {
 
     echo "deleting alacritty dir..."
     rm -rf ${alacritty_dir}
+
+    echo "deleting walker dir..."
+    rm -rf ${walker_dir}
 }
 
 yay_packages() {
@@ -35,6 +39,9 @@ conf_dir() {
 
     echo "creating alacritty dir..."
     mkdir -p ${alacritty_dir}
+
+    echo "creating walker dir..."
+    mkdir -p ${walker_dir}
 }
 
 links() {
@@ -49,6 +56,9 @@ links() {
 
     echo "link alacritty configs..."
     ln -s $(pwd)/alacritty/* ${alacritty_dir}
+
+    echo "link walker configs..."
+    ln -s $(pwd)/walker/* ${walker_dir}
 }
 
 reload() {
