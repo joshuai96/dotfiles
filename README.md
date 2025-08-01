@@ -18,6 +18,7 @@ Most of this is portable to other systems.
     - [Widgets](#widgets)
     - [Taskbar](#taskbar)
     - [Terminal emulator](#terminal-emulator)
+    - [Shell prompt](#shell-prompt)
     - [Notification daemon](#notification-daemon)
     - [Filexplorer](#filexplorer)
   - [Colors](#colors)
@@ -41,16 +42,17 @@ Most of this is portable to other systems.
 
 ## Components
 
-| Component            | Name              | Link                                                                                     |
-| -------------------- | ----------------- | ---------------------------------------------------------------------------------------- |
-| OS                   | EndeavourOS       | [endeavouros.com](https://endeavouros.com/)                                              |
-| Window manager       | Hyprland          | [hypr.land](https://hypr.land/)                                                          |
-| Application launcher | Walker            | [github.com/abenz1267/walker](https://github.com/abenz1267/walker)                       |
-| Widgets              | Eww               | [github.com/elkowar/eww](https://github.com/elkowar/eww)                                 |
-| Taskbar              | Waybar            | [github.com/Alexays/Waybar/](https://github.com/Alexays/Waybar/)                         |
-| Terminal emulator    | Alacritty         | [github.com/alacritty/alacritty](https://github.com/alacritty/alacritty)                 |
-| Notification daemon  | Dunst             | [github.com/dunst-project/dunst](https://github.com/dunst-project/dunst)                 |
-| Filexplorer          | Nautilus          | [apps.gnome.org/Nautilus/](https://apps.gnome.org/Nautilus/)                             |
+| Component                                     | Name              | Link                                                                                     |
+| --------------------------------------------- | ----------------- | ---------------------------------------------------------------------------------------- |
+| [OS](#os)                                     | EndeavourOS       | [endeavouros.com](https://endeavouros.com/)                                              |
+| [Window manager](#window-manager)             | Hyprland          | [hypr.land](https://hypr.land/)                                                          |
+| [Application launcher](#application-launcher) | Walker            | [github.com/abenz1267/walker](https://github.com/abenz1267/walker)                       |
+| [Widgets](#widgets)                           | Eww               | [github.com/elkowar/eww](https://github.com/elkowar/eww)                                 |
+| [Taskbar](#taskbar)                           | Waybar            | [github.com/Alexays/Waybar/](https://github.com/Alexays/Waybar/)                         |
+| [Terminal emulator](#terminal-emulator)       | Alacritty         | [github.com/alacritty/alacritty](https://github.com/alacritty/alacritty)                 |
+| [Shell prompt](#shell-prompt)                 | Starship          | [starship.rs](https://starship.rs/)                                                      |
+| [Notification daemon](#notification-daemon)   | Dunst             | [github.com/dunst-project/dunst](https://github.com/dunst-project/dunst)                 |
+| [Filexplorer](#filexplorer)                   | Nautilus          | [apps.gnome.org/Nautilus/](https://apps.gnome.org/Nautilus/)                             |
 
 ### OS
 
@@ -74,9 +76,17 @@ Waybar is installed by `pacman` via install using [`user_pkglist.txt`](user_pkgl
 
 Design inspired by [kamlendras/waybar-macos-sequoia](https://github.com/kamlendras/waybar-macos-sequoia)
 
+![waybar-screenshot](screenshots/waybar.png)
+
 ### Terminal emulator
 
 Alacritty is installed by `pacman` via install using [`user_pkglist.txt`](user_pkglist.txt).
+
+![alacritty-screenshot](screenshots/alacritty.png)
+
+### Shell prompt
+
+Starship with [joshuai96/starship-powerline-nord](https://github.com/joshuai96/starship-powerline-nord)
 
 ### Notification daemon
 
