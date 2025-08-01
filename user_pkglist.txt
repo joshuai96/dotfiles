@@ -1,4 +1,6 @@
-# Rice needs
+# Basics
+bash
+bash-completion
 yay
 hyprland
 waybar
