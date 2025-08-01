@@ -2,7 +2,7 @@
 
 hypr_dir=${HOME}/.config/hypr
 waybar_dir=${HOME}/.config/waybar
-wallpaper_dir=${HOME}/.wallpapers
+wallpapers_dir=${HOME}/.wallpapers
 alacritty_dir=${HOME}/.config/alacritty
 
 clean() {
@@ -12,8 +12,8 @@ clean() {
     echo "deleting waybar dir..."
     rm -rf ${waybar_dir}
 
-    echo "deleting wallpaper dir..."
-    rm -rf ${wallpaper_dir}
+    echo "deleting wallpapers dir..."
+    rm -rf ${wallpapers_dir}
 
     echo "deleting alacritty dir..."
     rm -rf ${alacritty_dir}
@@ -30,8 +30,8 @@ conf_dir() {
     echo "creating waybar dir..."
     mkdir -p ${waybar_dir}
 
-    echo "creating wallpaper dir..."
-    mkdir -p ${wallpaper_dir}
+    echo "creating wallpapers dir..."
+    mkdir -p ${wallpapers_dir}
 
     echo "creating alacritty dir..."
     mkdir -p ${alacritty_dir}
@@ -45,7 +45,7 @@ links() {
     ln -s $(pwd)/waybar/* ${waybar_dir}
 
     echo "link wallpapers..."
-    ln -s $(pwd)/wallpaper/* ${wallpaper_dir}
+    ln -s $(pwd)/wallpapers/* ${wallpapers_dir}
 
     echo "link alacritty configs..."
     ln -s $(pwd)/alacritty/* ${alacritty_dir}
