@@ -19,7 +19,7 @@ dunst
 pipewire
 wireplumber
 brightnessctl
-startship
+starship
 
 # UWSM
 util-linux
