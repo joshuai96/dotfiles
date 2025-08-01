@@ -5,22 +5,17 @@
     "height": 24,
     "spacing": 5,
     "modules-left": [
-      "custom/launcher",
-      "hyprland/window"
+      "cpu",
+      "memory",
+      "temperature",
+      "network",
+      "pulseaudio"
     ],
     "modules-center": [
       "hyprland/workspaces"
     ],
     "modules-right": [
       "idle_inhibitor",
-      "hyprland/language",
-      "temperature",
-      "cpu",
-      "memory",
-      "network",
-      "pulseaudio",
-      "bluetooth",
-      "backlight",
       "battery",
       "tray",
       "clock",
