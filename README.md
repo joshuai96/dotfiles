@@ -32,7 +32,7 @@ Most of this is portable to other systems.
   - [x] Hyprpaper
   - [x] Styles
   - [ ] other hypr stuff
-- [ ] Walker
+- [x] Walker
 - [ ] Eww
 - [x] Waybar
 - [x] Alacritty
@@ -65,6 +65,8 @@ Hyprland is installed by `pacman` via install using [`user_pkglist.txt`](user_pk
 ### Application launcher
 
 Walker needs to be installed afterwards with `yay`.
+
+![walker-screenshot](screenshots/walker.png)
 
 ### Widgets
 
