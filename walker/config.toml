@@ -1,7 +1,7 @@
 as_window = false
 close_when_open = false
 disable_click_to_close = false
-force_keyboard_focus = false
+force_keyboard_focus = true
 hotreload_theme = true
 ignore_mouse = false
 app_launch_prefix = ""
@@ -57,7 +57,7 @@ resume_last_query = false
 labels = "jkl;asdf"
 
 [builtins.applications]
-weight = 5
+weight = 6
 name = "applications"
 placeholder = "Applications"
 prioritize_new = true

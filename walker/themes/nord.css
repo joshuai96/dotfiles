@@ -1,3 +1,10 @@
+@define-color nord0 rgba(46,  52,  64, 0.98);
+@define-color nord1 rgba(59, 66, 82, 0.98);
+@define-color nord4 rgba(216, 222, 233, 0.8);
+@define-color nord8 rgba(136, 192, 208, 0.8);
+@define-color nord11 rgba(191,  97, 106, 0.4);
+@define-color nord15 rgba(180, 142, 173, 0.98);
+
 #window,
 #box,
 #aiScroll,
@@ -21,13 +28,117 @@ slider,
   all: unset;
 }
 
-#window {
-  background: #2e3440;
-  color: #d8dee9;
-  padding: 10px;
-  border-radius: 15px;
+#cfgerr {
+  background: @nord11;
+  margin-top: 20px;
+  padding: 8px;
+  font-size: 1.2em;
 }
 
-/* #box {
-  background: red;
-} */
+#window {
+  /* background: @background; */
+  color: @nord4;
+  /* padding: 10px;
+  border-radius: 15px; */
+}
+
+#box {
+  border-radius: 10px;
+  background: @nord0;
+  padding: 32px;
+  border: 2px solid @nord8;
+  box-shadow:
+    0 19px 38px rgba(0, 0, 0, 0.3),
+    0 15px 12px rgba(0, 0, 0, 0.22);
+}
+
+#search {
+  border-radius: 10px;
+  box-shadow:
+    0 1px 3px rgba(0, 0, 0, 0.1),
+    0 1px 2px rgba(0, 0, 0, 0.22);
+  background: @nord1;
+  padding: 12px;
+  margin-bottom: 10px;
+}
+
+#prompt {
+  margin-left: 4px;
+  margin-right: 12px;
+  color: @nord15;
+  opacity: 0.2;
+}
+
+#clear {
+  color: @nord15;
+  opacity: 0.8;
+}
+
+#password,
+#input,
+#typeahead {
+  border-radius: 2px;
+}
+
+#input {
+  background: none;
+}
+
+#spinner {
+  padding: 10px;
+}
+
+#typeahead {
+  color: @nord15;
+  opacity: 0.8;
+}
+
+#input placeholder {
+  opacity: 0.5;
+}
+
+child {
+  padding: 5px;
+  border-radius: 10px;
+}
+
+child:selected,
+child:hover {
+  background: alpha(@nord8, 0.5);
+  border-radius: 10px;
+}
+
+#icon {
+  margin-right: 8px;
+}
+
+#label {
+  font-weight: 500;
+}
+
+#sub {
+  opacity: 0.5;
+  font-size: 0.8em;
+}
+
+.activation #text,
+.activation #icon,
+.activation #search {
+  opacity: 0.5;
+}
+
+.aiItem {
+  padding: 10px;
+  border-radius: 2px;
+  color: @nord4;
+  background: @nord15;
+}
+
+.aiItem.user {
+  padding-left: 0;
+  padding-right: 0;
+}
+
+.aiItem.assistant {
+  background: @nord1;
+}
