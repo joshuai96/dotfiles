@@ -118,3 +118,20 @@ The awesome [Nord Theme](https://www.nordtheme.com/)
 
 - [awesome-hyprland](https://github.com/hyprland-community/awesome-hyprland)
 - [seful-Utilities](https://wiki.hypr.land/Useful-Utilities/)
+
+## Notes
+
+### bashrc.d loader
+
+```bash
+if [ -d ~/.bashrc.d ]; then
+	for rc in ~/.bashrc.d/*; do
+		if [ -f "$rc" ]; then
+			. "$rc"
+		fi
+	done
+fi
+
+unset rc
+
+```

@@ -6,6 +6,7 @@ wallpapers_dir=${HOME}/.wallpapers
 alacritty_dir=${HOME}/.config/alacritty
 walker_dir=${HOME}/.config/walker
 uwsm_dir=${HOME}/.config/uwsm
+bashrc_dir=${HOME}/.bashrc.d
 
 clean() {
     echo "deleting hypr dir..."
@@ -25,6 +26,9 @@ clean() {
 
     echo "deleting uwsm dir..."
     rm -rf ${uwsm_dir}
+
+    echo "deleting bashrc dir..."
+    rm -rf ${bashrc_dir}
 }
 
 yay_packages() {
@@ -49,6 +53,9 @@ conf_dir() {
 
     echo "creating uwsm dir..."
     mkdir -p ${uwsm_dir}
+
+    echo "creating bashrc dir..."
+    mkdir -p ${bashrc_dir}
 }
 
 links() {
@@ -69,6 +76,9 @@ links() {
 
     echo "link uwsm configs..."
     ln -s $(pwd)/uwsm/* ${uwsm_dir}
+
+    echo "link bashrc configs..."
+    ln -s $(pwd)/bashrc.d/* ${bashrc_dir}
 }
 
 reload() {
