@@ -24,7 +24,7 @@ clean() {
 }
 
 yay_packages() {
-    yay -Syu walker-bin google-chrome
+    yay -Syu walker-bin
 }
 
 conf_dir() {
