@@ -1,0 +1,71 @@
+{
+  "editor.tabSize": 2,
+  "editor.fontFamily": "'FiraCode Nerd Font Mono', 'Source Code Pro', monospace",
+  "editor.fontLigatures": "'cv01', 'cv02', 'cv04', 'ss01', 'ss02', 'ss03', 'ss05', 'cv16', 'ss08'",
+  "editor.autoIndent": "advanced",
+  "editor.unicodeHighlight.nonBasicASCII": true,
+  "editor.detectIndentation": true,
+
+  "explorer.confirmDelete": false,
+  "explorer.confirmDragAndDrop": false,
+
+  "files.eol": "\n",
+  "files.insertFinalNewline": true,
+  "files.trimFinalNewlines": true,
+  "files.trimTrailingWhitespace": true,
+  "files.autoSave": "afterDelay",
+  "files.autoSaveDelay": 1500,
+
+  "workbench.startupEditor": "none",
+  "workbench.colorTheme": "Nord",
+  "workbench.colorCustomizations": {
+    "[Nord]": {
+      "editorBracketHighlight.foreground1": "#BF616A",
+      "editorBracketHighlight.foreground2": "#D08770",
+      "editorBracketHighlight.foreground3": "#EBCB8B",
+      "editorBracketHighlight.foreground4": "#B48EAD",
+      "editorBracketHighlight.foreground5": "#BF616A",
+      "editorBracketHighlight.foreground6": "#D08770",
+      "editorBracketPairGuide.activeBackground1": "#BF616A",
+      "editorBracketPairGuide.activeBackground2": "#D08770",
+      "editorBracketPairGuide.activeBackground3": "#EBCB8B",
+      "editorBracketPairGuide.activeBackground4": "#B48EAD",
+      "editorBracketPairGuide.activeBackground5": "#BF616A",
+      "editorBracketPairGuide.activeBackground6": "#D08770",
+    }
+  },
+
+  "git.confirmSync": false,
+  "git.autofetch": true,
+  "git.suggestSmartCommit": false,
+  "git.replaceTagsWhenPull": true,
+  "git.openRepositoryInParentFolders": "never",
+
+  "gitblame.inlineMessageEnabled": true,
+  "gitblame.inlineMessageFormat": "${author.name} (${time.ago}) - ${commit.summary}",
+  "gitblame.currentUserAlias": "You",
+
+  "telemetry.feedback.enabled": false,
+
+  "chat.agent.enabled": false,
+
+  "terminal.integrated.suggest.enabled": false,
+  "terminal.integrated.initialHint": false,
+
+  "go.coverOnSave": true,
+  "go.formatTool": "gofumpt",
+  "go.lintTool": "golangci-lint-v2",
+  "go.toolsManagement.autoUpdate": true,
+  "go.coverageDecorator": {
+    "type": "gutter",
+    "coveredGutterStyle": "blockgreen",
+    "uncoveredGutterStyle": "blockred"
+  },
+
+  "[python]": {
+    "editor.tabSize": 4
+  },
+  "python.analysis.autoFormatStrings": true,
+  "python.analysis.typeCheckingMode": "strict",
+  "python.analysis.autoImportCompletions": false,
+}
