@@ -1,0 +1,35 @@
+output "BNQ BenQ EX2710Q C1R01523019" {
+  mode 2560x1440@120.00Hz
+  position 1080,240
+  alias $HOME_MAIN
+}
+
+output "BNQ BenQ GW2470 PCJ01062019" {
+  mode 1920x1080@50.00Hz
+  position 0,0
+  transform 270
+  alias $HOME_PORTRAIT
+}
+
+output "BNQ BenQ GW2765 G6F01065019" {
+  mode 2560x1440@59.95Hz
+  position 3640,240
+  alias $HOME_SECONDARY
+}
+
+output "BOE 0x08A8 Unknown" {
+  mode 1920x1080@60.00Hz
+  position 0,0
+  alias $BUILT_IN
+}
+
+profile home {
+  output $BUILT_IN disable
+  output $HOME_MAIN enable
+  output $HOME_SECONDARY enable
+  output $HOME_PORTRAIT enable
+}
+
+profile mobile {
+  output $BUILT_IN enable
+}
