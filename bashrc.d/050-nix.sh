@@ -1,6 +1,8 @@
 ###############################################################################
 # NixOS, homemanger, etc. helpful aliases.
 ###############################################################################
+export NIX_SHELL_PRESERVE_PROMPT=true
+
 alias nix-system-clean='sudo nix-collect-garbage -d'
 alias nix-user-clean='nix-collect-garbage -d'
 alias nix-clean-orphans='nix store gc && sudo nix store optimise'
