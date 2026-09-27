@@ -1,36 +1,19 @@
--- This is an example Hyprland Lua config file.
--- Refer to the wiki for more information.
--- https://wiki.hypr.land/Configuring/Start/
-
--- Please note not all available settings / options are set here.
--- For a full list, see the wiki
-
--- You can (and should!!) split this configuration into multiple files
--- Create your files separately and then require them like this:
--- require("myColors")
-
-
-------------------
----- MONITORS ----
-------------------
-
--- See https://wiki.hypr.land/Configuring/Basics/Monitors/
-hl.monitor({
-    output   = "",
-    mode     = "preferred",
-    position = "auto",
-    scale    = "auto",
-})
-
+-----------------
+---- IMPORTS ----
+-----------------
+local colors = require("colors")
+local fonts = require("fonts")
 
 ---------------------
 ---- MY PROGRAMS ----
 ---------------------
 
 -- Set programs that you use
-local terminal    = "kitty"
-local fileManager = "dolphin"
+local terminal    = "alacritty"
+local fileManager = "alacritty -e yazi"
 local menu        = "hyprlauncher"
+local screenshot  = "hyprshot --mode region --freeze --clipboard-only"
+local lockScreen  = "hyprlock"
 
 
 -------------------
@@ -38,15 +21,20 @@ local menu        = "hyprlauncher"
 -------------------
 
 -- See https://wiki.hypr.land/Configuring/Basics/Autostart/
-
--- Autostart necessary processes (like notifications daemons, status bars, etc.)
--- Or execute your favorite apps at launch like this:
 --
--- hl.on("hyprland.start", function ()
---   hl.exec_cmd(terminal)
---   hl.exec_cmd("nm-applet")
---   hl.exec_cmd("waybar & hyprpaper & firefox")
--- end)
+hl.on("hyprland.start", function ()
+  hl.exec_cmd("systemctl --user start hyprpolkitagent")
+  hl.exec_cmd("nm-applet")
+  hl.exec_cmd("elephant & walker --gapplication-service")
+  hl.exec_cmd("waybar & hyprpaper & hypridle")
+  hl.exec_cmd("kanshi")
+  hl.exec_cmd("gsettings set org.gnome.desktop.interface color-scheme \"prefer-dark\"")
+  hl.exec_cmd("gsettings set org.gnome.desktop.interface gtk-theme \"Nordic\"")
+  hl.exec_cmd("set org.gnome.desktop.wm.preferences theme \"Nordic\"")
+  hl.exec_cmd("dropbox start")
+  hl.exec_cmd("dropbox start")
+  hl.exec_cmd("mullvad-gui")
+end)
 
 
 -------------------------------
@@ -57,7 +45,10 @@ local menu        = "hyprlauncher"
 
 hl.env("XCURSOR_SIZE", "24")
 hl.env("HYPRCURSOR_SIZE", "24")
-
+hl.env("GDK_BACKEND", "wayland,x11,*")
+hl.env("QT_QPA_PLATFORM", "wayland;xcb")
+hl.env("SDL_VIDEODRIVER", "wayland")
+hl.env("CLUTTER_BACKEND", "wayland")
 
 -----------------------
 ----- PERMISSIONS -----
@@ -84,52 +75,52 @@ hl.env("HYPRCURSOR_SIZE", "24")
 
 -- Refer to https://wiki.hypr.land/Configuring/Basics/Variables/
 hl.config({
-    general = {
-        gaps_in  = 5,
-        gaps_out = 20,
+  general = {
+    gaps_in  = 5,
+    gaps_out = 5,
 
-        border_size = 2,
+    border_size = 2,
 
-        col = {
-            active_border   = { colors = {"rgba(33ccffee)", "rgba(00ff99ee)"}, angle = 45 },
-            inactive_border = "rgba(595959aa)",
-        },
-
-        -- Set to true to enable resizing windows by clicking and dragging on borders and gaps
-        resize_on_border = false,
-
-        -- Please see https://wiki.hypr.land/Configuring/Advanced-and-Cool/Tearing/ before you turn this on
-        allow_tearing = false,
-
-        layout = "dwindle",
+    col = {
+        active_border   = { colors = {colors.active, colors.visible}, angle = 45 },
+        inactive_border = colors.bg,
     },
 
-    decoration = {
-        rounding       = 10,
-        rounding_power = 2,
+    -- Set to true to enable resizing windows by clicking and dragging on borders and gaps
+    resize_on_border = false,
 
-        -- Change transparency of focused and unfocused windows
-        active_opacity   = 1.0,
-        inactive_opacity = 1.0,
+    -- Please see https://wiki.hypr.land/Configuring/Advanced-and-Cool/Tearing/ before you turn this on
+    allow_tearing = false,
 
-        shadow = {
-            enabled      = true,
-            range        = 4,
-            render_power = 3,
-            color        = 0xee1a1a1a,
-        },
+    layout = "dwindle",
+  },
 
-        blur = {
-            enabled   = true,
-            size      = 3,
-            passes    = 1,
-            vibrancy  = 0.1696,
-        },
+  decoration = {
+    rounding       = 5,
+    rounding_power = 4,
+
+    -- Change transparency of focused and unfocused windows
+    active_opacity   = 1.0,
+    inactive_opacity = 0.95,
+
+    shadow = {
+        enabled      = true,
+        range        = 4,
+        render_power = 3,
+        color        = colors.bg,
     },
 
-    animations = {
-        enabled = true,
+    blur = {
+        enabled   = true,
+        size      = 7,
+        passes    = 2,
+        vibrancy  = 0.2,
     },
+  },
+
+  animations = {
+    enabled = true,
+  },
 })
 
 -- Default curves and animations, see https://wiki.hypr.land/Configuring/Advanced-and-Cool/Animations/
@@ -140,7 +131,7 @@ hl.curve("almostLinear",   { type = "bezier", points = { {0.5, 0.5},   {0.75, 1}
 hl.curve("quick",          { type = "bezier", points = { {0.15, 0},    {0.1, 1}     } })
 
 -- Default springs
-hl.curve("easy",           { type = "spring", mass = 1, stiffness = 238.1191, damping = 24.21279333 })
+hl.curve("easy",           { type = "spring", mass = 1, stiffness = 238.1191, dampening = 24.21279333 })
 
 hl.animation({ leaf = "global",        enabled = true,  speed = 10,   bezier = "default" })
 hl.animation({ leaf = "border",        enabled = true,  speed = 5.39, bezier = "easeOutQuint" })
@@ -160,43 +151,25 @@ hl.animation({ leaf = "workspacesIn",  enabled = true,  speed = 1.21, bezier = "
 hl.animation({ leaf = "workspacesOut", enabled = true,  speed = 1.94, bezier = "almostLinear", style = "fade" })
 hl.animation({ leaf = "zoomFactor",    enabled = true,  speed = 7,    bezier = "quick" })
 
--- Ref https://wiki.hypr.land/Configuring/Basics/Workspace-Rules/
--- "Smart gaps" / "No gaps when only"
--- uncomment all if you wish to use that.
--- hl.workspace_rule({ workspace = "w[tv1]", gaps_out = 0, gaps_in = 0 })
--- hl.workspace_rule({ workspace = "f[1]",   gaps_out = 0, gaps_in = 0 })
--- hl.window_rule({
---     name  = "no-gaps-wtv1",
---     match = { float = false, workspace = "w[tv1]" },
---     border_size = 0,
---     rounding    = 0,
--- })
--- hl.window_rule({
---     name  = "no-gaps-f1",
---     match = { float = false, workspace = "f[1]" },
---     border_size = 0,
---     rounding    = 0,
--- })
-
 -- See https://wiki.hypr.land/Configuring/Layouts/Dwindle-Layout/ for more
 hl.config({
-    dwindle = {
-        preserve_split = true, -- You probably want this
-    },
+  dwindle = {
+    preserve_split = true, -- You probably want this
+  },
 })
 
 -- See https://wiki.hypr.land/Configuring/Layouts/Master-Layout/ for more
 hl.config({
-    master = {
-        new_status = "master",
-    },
+  master = {
+    new_status = "master",
+  },
 })
 
 -- See https://wiki.hypr.land/Configuring/Layouts/Scrolling-Layout/ for more
 hl.config({
-    scrolling = {
-        fullscreen_on_one_column = true,
-    },
+  scrolling = {
+    fullscreen_on_one_column = true,
+  },
 })
 
 ----------------
@@ -204,10 +177,19 @@ hl.config({
 ----------------
 
 hl.config({
-    misc = {
-        force_default_wallpaper = -1,    -- Set to 0 or 1 to disable the anime mascot wallpapers
-        disable_hyprland_logo   = false, -- If true disables the random hyprland logo / anime girl background. :(
+  misc = {
+    force_default_wallpaper = -1,    -- Set to 0 or 1 to disable the anime mascot wallpapers
+    disable_hyprland_logo   = false, -- If true disables the random hyprland logo / anime girl background. :(
+
+    font_family = fonts.default,
+    splash_font_family = fonts.default,
+
+    -- bell_sound = "",
+    vrr = 2,
+    col = {
+      splash = colors.text,
     },
+  },
 })
 
 
@@ -216,27 +198,31 @@ hl.config({
 ---------------
 
 hl.config({
-    input = {
-        kb_layout  = "us",
-        kb_variant = "",
-        kb_model   = "",
-        kb_options = "",
-        kb_rules   = "",
+  input = {
+    kb_layout  = "de",
+    kb_variant = "",
+    kb_model   = "",
+    kb_options = "caps:super",
+    kb_rules   = "",
 
-        follow_mouse = 1,
+    numlock_by_default = true,
 
-        sensitivity = 0, -- -1.0 - 1.0, 0 means no modification.
+    follow_mouse = 1,
 
-        touchpad = {
-            natural_scroll = false,
-        },
+    sensitivity = 0, -- -1.0 - 1.0, 0 means no modification.
+
+    touchpad = {
+      natural_scroll = true,
+      clickfinger_behavior = true,
+      disable_while_typing = true,
     },
+  },
 })
 
 hl.gesture({
     fingers = 3,
     direction = "horizontal",
-    action = "workspace"
+    action = "workspace",
 })
 
 -- Example per-device config
@@ -304,6 +290,9 @@ hl.bind("XF86AudioPause", hl.dsp.exec_cmd("playerctl play-pause"), { locked = tr
 hl.bind("XF86AudioPlay",  hl.dsp.exec_cmd("playerctl play-pause"), { locked = true })
 hl.bind("XF86AudioPrev",  hl.dsp.exec_cmd("playerctl previous"),   { locked = true })
 
+-- Custom keybinds
+hl.bind("Print", hl.dsp.exec_cmd(screenshot))
+hl.bind(mainMod .. " + L", hl.dsp.exec_cmd(lockScreen))
 
 --------------------------------
 ---- WINDOWS AND WORKSPACES ----
@@ -312,30 +301,48 @@ hl.bind("XF86AudioPrev",  hl.dsp.exec_cmd("playerctl previous"),   { locked = tr
 -- See https://wiki.hypr.land/Configuring/Basics/Window-Rules/
 -- and https://wiki.hypr.land/Configuring/Basics/Workspace-Rules/
 
--- Example window rules that are useful
+-- "Smart gaps" / "No gaps when only"
+hl.workspace_rule({ workspace = "w[tv1]", gaps_out = 0, gaps_in = 0 })
+hl.workspace_rule({ workspace = "f[1]",   gaps_out = 0, gaps_in = 0 })
+-- hl.window_rule({
+--     name  = "no-gaps-wtv1",
+--     match = { float = false, workspace = "w[tv1]" },
+--     border_size = 0,
+--     rounding    = 0,
+-- })
+-- hl.window_rule({
+--     name  = "no-gaps-f1",
+--     match = { float = false, workspace = "f[1]" },
+--     border_size = 0,
+--     rounding    = 0,
+-- })
 
+hl.workspace_rule({
+  workspace = "monitor:",
+})
+
+-- Ignore maximize requests from all apps. You'll probably like this.
 local suppressMaximizeRule = hl.window_rule({
-    -- Ignore maximize requests from all apps. You'll probably like this.
-    name  = "suppress-maximize-events",
-    match = { class = ".*" },
+  name  = "suppress-maximize-events",
+  match = { class = ".*" },
 
-    suppress_event = "maximize",
+  suppress_event = "maximize",
 })
 -- suppressMaximizeRule:set_enabled(false)
 
+-- Fix some dragging issues with XWayland
 hl.window_rule({
-    -- Fix some dragging issues with XWayland
-    name  = "fix-xwayland-drags",
-    match = {
-        class      = "^$",
-        title      = "^$",
-        xwayland   = true,
-        float      = true,
-        fullscreen = false,
-        pin        = false,
-    },
+  name  = "fix-xwayland-drags",
+  match = {
+      class      = "^$",
+      title      = "^$",
+      xwayland   = true,
+      float      = true,
+      fullscreen = false,
+      pin        = false,
+  },
 
-    no_focus = true,
+  no_focus = true,
 })
 
 -- Layer rules also return a handle.
@@ -348,9 +355,18 @@ hl.window_rule({
 
 -- Hyprland-run windowrule
 hl.window_rule({
-    name  = "move-hyprland-run",
-    match = { class = "hyprland-run" },
+  name  = "move-hyprland-run",
+  match = { class = "hyprland-run" },
 
-    move  = "20 monitor_h-120",
-    float = true,
+  move  = "20 monitor_h-120",
+  float = true,
+})
+
+hl.window_rule({
+  name = "warn-xwayland-windows",
+  match = {
+    xwayland = true,
+  },
+
+  border_color = colors.error,
 })
